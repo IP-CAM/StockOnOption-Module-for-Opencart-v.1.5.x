@@ -1,0 +1,57 @@
+<modification>
+
+	<id>Stock On Option.</id>
+
+	<version>1.5.4</version>
+
+	<vqmver>2.1.6</vqmver>
+
+	<author>Bogdan-Ioan BRUDIU</author>
+
+
+	
+
+	
+
+
+
+
+
+
+
+	<file name="catalog/controller/product/product.php">
+
+		<operation>
+
+			<search position="before"><![CDATA['name'                    => $option_value['name'],]]></search>
+
+			<add><![CDATA['quantity'                    => $option_value['quantity'],]]></add>
+
+		</operation>
+
+
+
+
+
+	</file>
+
+
+<file name="catalog/view/theme/*/template/product/product.tpl">
+
+		<operation>
+
+			<search position="replace" index="1"><![CDATA[<?php echo $option_value['name']; ?>]]></search>
+
+			<add><![CDATA[<?php echo $option_value['name']." - stoc ".$option_value['quantity']; ?>]]></add>
+
+		</operation>
+
+
+
+
+
+	</file>
+	
+
+
+</modification>
